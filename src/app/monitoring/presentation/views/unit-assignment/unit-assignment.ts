@@ -1,4 +1,5 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
 import { MonitoringDataService } from '../../../application/monitoring-data.service';
 
@@ -50,6 +51,6 @@ import { MonitoringDataService } from '../../../application/monitoring-data.serv
 })
 export class UnitAssignment {
   private svc = inject(MonitoringDataService);
-  unidades    = signal(this.svc.getUnidades());
+  unidades    = toSignal(this.svc.getUnidades(), { initialValue: [] });
   estadoColor(e: string) { return e === 'ACTIVO' ? 'var(--sb-accent)' : e === 'ALERTA' ? 'var(--sb-red)' : 'var(--sb-gray)'; }
 }
