@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   // Local: backend corriendo en tu máquina con Maven/IntelliJ (H2 local).
 platformProviderApiBaseUrl: 'https://avisum-backendv2.onrender.com/api/v1',
   platformProviderConductoresEndpointPath: '/employees',
