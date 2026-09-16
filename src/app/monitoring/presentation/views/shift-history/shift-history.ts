@@ -1,4 +1,5 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { MatIconModule } from '@angular/material/icon';
 import { DecimalPipe, DatePipe } from '@angular/common';
 import { MonitoringDataService } from '../../../application/monitoring-data.service';
@@ -49,7 +50,7 @@ export class ShiftHistory {
   private svc   = inject(MonitoringDataService);
   private users = inject(UsersStateService);
 
-  historial = signal(this.svc.getHistorial());
+  historial = toSignal(this.svc.getHistorial(), { initialValue: [] });
 
   nombreConductor(id: number): string {
     const c = this.users.getConductores().find(c => c.id === id);
