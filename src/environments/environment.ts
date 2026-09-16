@@ -1,11 +1,11 @@
 export const environment = {
-  production: true,
-  //carlos, si lees esto, por favor no cambies la url de la api todavia, amenos que ya hayas creado uno nuevo con Avisum, ya que es la que esta en produccion y es la que se usa para el despliegue de la app. Si quieres hacer pruebas, crea un archivo environment.development.ts y ahi si puedes cambiar la url de la api para hacer pruebas. ty 🦍.
-  platformProviderApiBaseUrl: 'https://safebus-backend-production.up.railway.app/api/v1',
+  production: false,
+  // Local: backend corriendo en tu máquina con Maven/IntelliJ (H2 local).
+platformProviderApiBaseUrl: 'https://avisum-backendv2.onrender.com/api/v1',
   platformProviderConductoresEndpointPath: '/employees',
-  platformProviderTurnosEndpointPath: '/drivers',
+  platformProviderTurnosEndpointPath: '/shifts',
   platformProviderAlertasEndpointPath: '/alerts',
-  platformProviderPasajerosEndpointPath: '/bus-units',
+  platformProviderPasajerosEndpointPath: '/passenger-counts',
   platformProviderUnidadesEndpointPath: '/bus-units',
   platformProviderAdminEndpointPath: '/employees',
   platformProviderDriversEndpointPath: '/drivers',
